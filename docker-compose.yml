@@ -15,11 +15,12 @@ services:
     ports:
       - 5432
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
+      - ./data/postgres:/data/postgres
     environment:
       POSTGRES_USER: "landev"
       POSTGRES_PASSWORD: "password1234"
       POSTGRES_DB: "landev"
+      PGDATA: "/data/postgres"
   adminer:
     container_name: adminer
     image: adminer
