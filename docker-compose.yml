@@ -13,7 +13,7 @@ services:
     image: postgres
     restart: unless-stopped
     ports:
-      - 5432
+      - 5432:5432
     volumes:
       - ./data/postgres:/data/postgres
     environment:
@@ -36,14 +36,14 @@ services:
     image: schickling/mailcatcher
     restart: unless-stopped
     ports:
-      - 1025
+      - 1025:1025
       - 4242:1080
   api:
     container_name: api
     image: quay.io/areafiftylan/lancie-api:latest
     restart: unless-stopped
     ports:
-      - 9000
+      - 9000:9000
     volumes:
       - ./data/api/logs:/srv/logs
     depends_on:
