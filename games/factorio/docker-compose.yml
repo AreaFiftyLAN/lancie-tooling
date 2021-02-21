@@ -1,0 +1,11 @@
+version: "3.4"
+
+services:
+  factorio:
+    image: factoriotools/factorio:stable
+    restart: unless-stopped
+    ports:
+      - 34197:34197/udp
+    volumes:
+      - ./data:/factorio
+      - /etc/localtime:/etc/localtime:ro
