@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<playlist>
+  <gameinfos>
+    <game_mode>0</game_mode>
+    <chat_time>10000</chat_time>
+    <finishtimeout>1</finishtimeout>
+    <allwarmupduration>0</allwarmupduration>
+    <disablerespawn>0</disablerespawn>
+    <forceshowallopponents>0</forceshowallopponents>
+    <script_name>
+      <![CDATA[TimeAttack.Script.txt]]>
+    </script_name>
+  </gameinfos>
+
+  <filter>
+    <is_lan>0</is_lan>
+    <is_internet>1</is_internet>
+    <is_solo>0</is_solo>
+    <is_hotseat>0</is_hotseat>
+    <sort_index>1000</sort_index>
+    <random_map_order>0</random_map_order>
+  </filter>
+
+  <script_settings>
+    <setting name="S_ChatTime" type="integer" value="10"/>
+    <setting name="S_UseClublinks" type="boolean" value="0"/>
+    <setting name="S_UseClublinksSponsors" type="boolean" value="0"/>
+    <setting name="S_NeutralEmblemUrl" type="text" value=""/>
+    <setting name="S_ScriptEnvironment" type="text" value="production"/>
+    <setting name="S_AllowRespawn" type="boolean" value="1"/>
+    <setting name="S_UseLegacyXmlRpcCallbacks" type="boolean" value="1"/>
+    <setting name="S_WarmUpNb" type="integer" value="0"/>
+    <setting name="S_WarmUpDuration" type="integer" value="0"/>
+    <setting name="S_TimeLimit" type="integer" value="300"/>
+  </script_settings>
+
+  <startindex>0</startindex>
+  <map><file>Campaigns/stadium-a01_(42034).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-a02_(42035).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-a03_(42036).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-a04_(42037).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-a05_(42039).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-a06_(42040).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-a07_(42042).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-a08_(42043).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-a09_(42044).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-a10_(42046).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-a11_(42047).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-a12_(42048).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-a13_(42050).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-a14_(42051).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-a15_(42052).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-b01_(42083).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-b02_(42084).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-b03_(42085).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-b04_(42086).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-b05_(42087).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-b06_(42088).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-b07_(42090).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-b08_(42091).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-b09_(42092).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-b10_(42093).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-b11_(42094).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-b12_(42095).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-b13_(42096).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-b14_(42098).Map.Gbx</file></map>
+  <map><file>Campaigns/stadium-b15_(42099).Map.Gbx</file></map>
+</playlist>
