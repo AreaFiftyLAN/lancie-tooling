@@ -1,0 +1,87 @@
+version: "3.4"
+
+services:
+  proxy:
+    image: itzg/bungeecord
+    restart: always
+    ports:
+      - 25565:25577
+    volumes:
+      - ./proxy:/server
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      TYPE: "WATERFALL"
+      MEMORY: "512M"
+    depends_on:
+      - creative
+      - survival
+      - uhc
+  database:
+    image: mariadb
+    restart: always
+    expose:
+      - 3306
+    volumes:
+      - ./database:/var/lib/mysql
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: "minecraft"
+      MYSQL_USER: "minecraft"
+      MYSQL_PASSWORD: "server1234567890"
+  creative:
+    image: itzg/minecraft-server
+    restart: unless-stopped
+    expose:
+      - 25565
+    volumes:
+      - ./creative:/data
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      EULA: "TRUE"
+      INIT_MEMORY: "512M"
+      MAX_MEMORY: "1G"
+      TYPE: "PAPER"
+      TZ: "Europe/Amsterdam"
+      USE_AIKAR_FLAGS: "true"
+      USE_LARGE_PAGES: "true"
+      FORCE_REDOWNLOAD: "true"
+    depends_on:
+      - database
+  survival:
+    image: itzg/minecraft-server
+    restart: unless-stopped
+    expose:
+      - 25565
+    volumes:
+      - ./survival:/data
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      EULA: "TRUE"
+      INIT_MEMORY: "512M"
+      MAX_MEMORY: "1G"
+      TYPE: "PAPER"
+      TZ: "Europe/Amsterdam"
+      USE_AIKAR_FLAGS: "true"
+      USE_LARGE_PAGES: "true"
+      FORCE_REDOWNLOAD: "true"
+    depends_on:
+      - database
+  uhc:
+    image: itzg/minecraft-server
+    restart: always
+    expose:
+      - 25565
+    volumes:
+      - ./uhc:/data
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      EULA: "TRUE"
+      INIT_MEMORY: "512M"
+      MAX_MEMORY: "1G"
+      TYPE: "PAPER"
+      TZ: "Europe/Amsterdam"
+      USE_AIKAR_FLAGS: "true"
+      USE_LARGE_PAGES: "true"
+      FORCE_REDOWNLOAD: "true"
+    depends_on:
+      - database

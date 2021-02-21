@@ -1,0 +1,6 @@
+creative: 0
+survival: 0
+uhc: 0
+ALREADY_ON_SERVER: '&cYou are already on that server!'
+TELEPORTING: '&2Teleporting your to the server {name}'
+ALREADY_TELEPORTING: '&cAlready teleporting you to a server'
