@@ -1,37 +1,62 @@
 version: "3.4"
 
+#   !!!!!!!!!!!!!!!!!!!!!!
+#   NOT FOR PRODUCTION USE
+#   !!!!!!!!!!!!!!!!!!!!!!
+#
+# This setup exposes huge and easy attack vectors.
+# For development only.
+
 services:
   database:
     container_name: database
     image: postgres
-    restart: always
-    expose:
-      - 5432
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data/postgres:/data/postgres
     environment:
       POSTGRES_USER: "landev"
       POSTGRES_PASSWORD: "password1234"
       POSTGRES_DB: "landev"
+      PGDATA: "/data/postgres"
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: unless-stopped
+    depends_on:
+      - database
+    ports:
+      - 8888:8080
+    environment:
+      ADMINER_DEFAULT_SERVER: "database"
   mailcatcher:
     container_name: mailcatcher
     image: schickling/mailcatcher
-    restart: always
-    expose:
-      - 1080
+    restart: unless-stopped
+    ports:
+      - 1025:1025
+      - 4242:1080
   api:
     container_name: api
-    image: quay.io/areafiftylan/lancie-api
-    restart: always
+    image: quay.io/areafiftylan/lancie-api:latest
+    restart: unless-stopped
     ports:
-      - 8082:8080
-  frontend:
-    container_name: frontend
-    image: quay.io/areafiftylan/lancie-frontend-beta
-    restart: always
-    ports:
-      - 8080:8080
-  admin:
-    container_name: admin
-    image: quay.io/areafiftylan/lancie-admin
-    restart: always
-    ports:
-      - 8081:8080
+      - 9000:9000
+    volumes:
+      - ./data/api/logs:/srv/logs
+    depends_on:
+      - database
+      - mailcatcher
+    environment:
+      SPRING_PROFILES_ACTIVE: "dev"
+      LOGING_LEVEL_ROOT: "TRACE"
+      SPRING_MAIL_HOST: "mail"
+      SPRING_MAIL_PORT: 1025
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://database:5432/landev"
+      SPRING_DATASOURCE_USERNAME: "landev"
+      SPRING_DATASOURCE_PASSWORD: "password1234"
+      A5l_MOLLIEKEY: "AAAAAAAAAAAAA"
+      A5l_GOOGLEMAPSAPIKEY: "AAAAAAAAAAAAA"
+      SLACK_SLACKWEBHOOK_URL: "https://slack.com"

@@ -1,2 +1,2 @@
 # lancie-tooling
-Tooling to deploy the LanCI software
+Tooling to deploy the LANcie software
