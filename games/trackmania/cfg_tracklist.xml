@@ -31,7 +31,7 @@
     <setting name="S_UseLegacyXmlRpcCallbacks" type="boolean" value="1"/>
     <setting name="S_WarmUpNb" type="integer" value="0"/>
     <setting name="S_WarmUpDuration" type="integer" value="0"/>
-    <setting name="S_TimeLimit" type="integer" value="300"/>
+    <setting name="S_TimeLimit" type="integer" value="240"/>
   </script_settings>
 
   <startindex>0</startindex>
