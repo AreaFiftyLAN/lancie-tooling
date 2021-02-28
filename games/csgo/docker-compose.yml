@@ -1,0 +1,108 @@
+version: "3.4"
+
+services:
+  csgo_1:
+    image: crazymax/csgo-server-launcher:latest
+    container_name: csgo_1
+    ports:
+      - target: 27015
+        published: 27015
+        protocol: udp
+      - target: 27015
+        published: 27015
+        protocol: tcp
+    environment:
+      PORT: "27015"
+      TZ: "Europe/Amsterdam"
+      PUID: "1000"
+      PGID: "1000"
+      SCREEN_NAME: "AreaFiftyLAN #1"
+      GSLT: "FILLMEINPLEASE"
+      CLEAR_DOWNLOAD_CACHE: "0"
+      STEAM_LOGIN: "anonymous"
+      STEAM_PASSWORD: "anonymous"
+      WORKSHOP_COLLECTION_ID: "125499818"
+      WORKSHOP_START_MAP: "125488374"
+      MAXPLAYERS: "18"
+      TICKRATE: "128"
+      EXTRAPARAMS: "-nohltv +sv_pure 0 +game_type 0 +game_mode 1 +mapgroup mg_active +map de_inferno"
+    volumes:
+      - "./1/game:/var/steamcmd/games/csgo"
+      - "./1/steam:/home/steam/Steam"
+    tty: true
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 32000
+        hard: 40000
+    restart: unless-stopped
+  csgo_2:
+    image: crazymax/csgo-server-launcher:latest
+    container_name: csgo_2
+    ports:
+      - target: 27016
+        published: 27016
+        protocol: udp
+      - target: 27016
+        published: 27016
+        protocol: tcp
+    environment:
+      PORT: "27016"
+      TZ: "Europe/Amsterdam"
+      PUID: "1000"
+      PGID: "1000"
+      SCREEN_NAME: "AreaFiftyLAN #2"
+      GSLT: "FILLMEINPLEASE"
+      CLEAR_DOWNLOAD_CACHE: "0"
+      STEAM_LOGIN: "anonymous"
+      STEAM_PASSWORD: "anonymous"
+      WORKSHOP_COLLECTION_ID: "125499818"
+      WORKSHOP_START_MAP: "125488374"
+      MAXPLAYERS: "18"
+      TICKRATE: "128"
+      EXTRAPARAMS: "-nohltv +sv_pure 0 +game_type 0 +game_mode 1 +mapgroup mg_active +map de_inferno"
+    volumes:
+      - "./2/game:/var/steamcmd/games/csgo"
+      - "./2/steam:/home/steam/Steam"
+    tty: true
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 32000
+        hard: 40000
+    restart: unless-stopped
+  csgo_3:
+    image: crazymax/csgo-server-launcher:latest
+    container_name: csgo_3
+    ports:
+      - target: 27017
+        published: 27017
+        protocol: udp
+      - target: 27017
+        published: 27017
+        protocol: tcp
+    environment:
+      PORT: "27017"
+      TZ: "Europe/Amsterdam"
+      PUID: "1000"
+      PGID: "1000"
+      SCREEN_NAME: "AreaFiftyLAN #3"
+      GSLT: "FILLMEINPLEASE"
+      CLEAR_DOWNLOAD_CACHE: "0"
+      STEAM_LOGIN: "anonymous"
+      STEAM_PASSWORD: "anonymous"
+      WORKSHOP_COLLECTION_ID: "125499818"
+      WORKSHOP_START_MAP: "125488374"
+      MAXPLAYERS: "18"
+      TICKRATE: "128"
+      EXTRAPARAMS: "-nohltv +sv_pure 0 +game_type 0 +game_mode 1 +mapgroup mg_active +map de_inferno"
+    volumes:
+      - "./3/game:/var/steamcmd/games/csgo"
+      - "./3/steam:/home/steam/Steam"
+    tty: true
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 32000
+        hard: 40000
+    restart: unless-stopped
