@@ -13,6 +13,7 @@ eula.txt
 help.yml
 commands.yml
 wepif.yml
+locations.yml
 *.db
 **/LuckPerms/translations
 **/LuckPerms/libs
@@ -27,9 +28,9 @@ proxy/plugins/BungeeTabListPlus/heads
 WorldEdit/
 scripts/
 Vault/
+ViaVersion/
 templates/
 translations/
 components.yml
 
-!database/minecraft
 !*/plugins/*.jar

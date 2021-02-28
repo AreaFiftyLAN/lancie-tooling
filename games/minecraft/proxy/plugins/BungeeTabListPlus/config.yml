@@ -45,4 +45,4 @@ notifyAdminsIfUpdateAvailable: true
 # If you intend to use the {onlineState:SERVER} variable set this to 2 or any value you like
 # setting this to -1 disables this feature
 pingDelay: -1
-time_zone: GMT
+time_zone: GMT+2
