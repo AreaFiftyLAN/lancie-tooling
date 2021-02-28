@@ -12,6 +12,8 @@ version_history.json
 eula.txt
 help.yml
 commands.yml
+wepif.yml
+*.db
 **/LuckPerms/translations
 **/LuckPerms/libs
 **/LuckPerms/contexts.json
@@ -22,6 +24,12 @@ uhc/uhc*
 database/*
 proxy/plugins/BungeeTabListPlus/cache.dat
 proxy/plugins/BungeeTabListPlus/heads
+WorldEdit/
+scripts/
+Vault/
+templates/
+translations/
+components.yml
 
 !database/minecraft
 !*/plugins/*.jar
