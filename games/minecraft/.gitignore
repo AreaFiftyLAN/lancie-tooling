@@ -31,6 +31,8 @@ Vault/
 ViaVersion/
 templates/
 translations/
+34fbf40f-d353-403f-b6ce-6ea6ca19999f/
 components.yml
+lang.yml
 
 !*/plugins/*.jar
