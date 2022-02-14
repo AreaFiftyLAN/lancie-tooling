@@ -1,3 +1,4 @@
+hostname "AreaFiftyLAN"
 version: "3.4"
 
 services:
@@ -29,6 +30,7 @@ services:
     volumes:
       - "./1/game:/var/steamcmd/games/csgo"
       - "./1/steam:/home/steam/Steam"
+      - "./autoexec.cfg:/var/steamcmd/games/csgo/csgo/cfg/autoexec.cfg:ro"
     tty: true
     ulimits:
       nproc: 65535
@@ -64,6 +66,7 @@ services:
     volumes:
       - "./2/game:/var/steamcmd/games/csgo"
       - "./2/steam:/home/steam/Steam"
+      - "./autoexec.cfg:/var/steamcmd/games/csgo/csgo/cfg/autoexec.cfg:ro"
     tty: true
     ulimits:
       nproc: 65535
@@ -99,6 +102,7 @@ services:
     volumes:
       - "./3/game:/var/steamcmd/games/csgo"
       - "./3/steam:/home/steam/Steam"
+      - "./autoexec.cfg:/var/steamcmd/games/csgo/csgo/cfg/autoexec.cfg:ro"
     tty: true
     ulimits:
       nproc: 65535
