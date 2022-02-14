@@ -2,26 +2,27 @@ configuration_version: v5
 worlds:
   creative:
     plot:
-      height: 46
-      size: 80
-      filling: minecraft:stone
-      floor: minecraft:grass_block
-      bedrock: true
+      height: 62
       biome: minecraft:forest
-      auto_merge: false
-      create_signs: true
-    wall:
-      block: minecraft:stone_slab
-      block_claimed: minecraft:sandstone_slab
-      place_top_block: true
+      sign_material: OAK_WALL_SIGN
+      size: 42
       filling: minecraft:stone
-      height: 46
+      auto_merge: false
+      bedrock: true
+      create_signs: true
+      floor: minecraft:grass_block
+    wall:
+      filling: minecraft:stone
+      block_claimed: minecraft:sandstone_slab
+      height: 62
+      block: minecraft:stone_slab
+      place_top_block: true
+    misc_spawn_unowned: false
     road:
-      width: 7
-      height: 46
       block: minecraft:quartz_block
       flags: {}
-    misc_spawn_unowned: false
+      height: 62
+      width: 7
     home:
       nonmembers: side
       default: side
@@ -39,10 +40,8 @@ worlds:
         sell: 100
         claim: 100
       use: false
-    limits:
-      max-members: 128
     world:
-      max_height: 512
+      max_height: 256
       gamemode: creative
       min_height: 1
       border: false

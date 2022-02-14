@@ -2,7 +2,7 @@ version: "3.4"
 
 services:
   proxy:
-    image: itzg/bungeecord
+    image: itzg/bungeecord@sha256:87fe66b441e9c13e46237af9b6d37e916979bec362d878903c3999974952a310
     restart: always
     ports:
       - 25565:25577
@@ -14,10 +14,9 @@ services:
       MEMORY: "512M"
     depends_on:
       - creative
-      - survival
       - uhc
   database:
-    image: mariadb
+    image: mariadb@sha256:6aede9b2573833b2271f413ae12268796499fdaa5073681f9902f5ab2c60b84a
     restart: always
     expose:
       - 3306
@@ -29,7 +28,7 @@ services:
       MYSQL_USER: "minecraft"
       MYSQL_PASSWORD: "server1234567890"
   creative:
-    image: itzg/minecraft-server
+    image: itzg/minecraft-server@sha256:b41d4bfe0a3e8fa02792858fcbcf13be4e989a5c745d0b68f4c958205278e072
     restart: unless-stopped
     expose:
       - 25565
@@ -41,25 +40,7 @@ services:
       INIT_MEMORY: "512M"
       MAX_MEMORY: "1G"
       TYPE: "PAPER"
-      TZ: "Europe/Amsterdam"
-      USE_AIKAR_FLAGS: "true"
-      USE_LARGE_PAGES: "true"
-      FORCE_REDOWNLOAD: "true"
-    depends_on:
-      - database
-  survival:
-    image: itzg/minecraft-server
-    restart: unless-stopped
-    expose:
-      - 25565
-    volumes:
-      - ./survival:/data
-      - /etc/localtime:/etc/localtime:ro
-    environment:
-      EULA: "TRUE"
-      INIT_MEMORY: "512M"
-      MAX_MEMORY: "1G"
-      TYPE: "PAPER"
+      VERSION: "1.18.1"
       TZ: "Europe/Amsterdam"
       USE_AIKAR_FLAGS: "true"
       USE_LARGE_PAGES: "true"
@@ -67,7 +48,7 @@ services:
     depends_on:
       - database
   uhc:
-    image: itzg/minecraft-server
+    image: itzg/minecraft-server@sha256:b41d4bfe0a3e8fa02792858fcbcf13be4e989a5c745d0b68f4c958205278e072
     restart: always
     expose:
       - 25565
@@ -79,6 +60,7 @@ services:
       INIT_MEMORY: "512M"
       MAX_MEMORY: "1G"
       TYPE: "PAPER"
+      VERSION: "1.17.1"
       TZ: "Europe/Amsterdam"
       USE_AIKAR_FLAGS: "true"
       USE_LARGE_PAGES: "true"

@@ -1,4 +1,3 @@
-server_connect_timeout: 5000
 listeners:
 - query_port: 25577
   motd: '&1AreaFiftyLAN'
@@ -11,12 +10,11 @@ listeners:
   priorities:
   - creative
   - uhc
-  - survival
   bind_local_address: true
   host: 0.0.0.0:25577
-  max_players: 40000
+  max_players: 4200
   tab_size: 60
-  force_default_server: false
+  force_default_server: true
 remote_ping_cache: -1
 network_compression_threshold: 256
 permissions:
@@ -30,8 +28,9 @@ permissions:
   - bungeecord.command.reload
 log_pings: true
 connection_throttle_limit: 3
-prevent_proxy_connections: false
+server_connect_timeout: 5000
 timeout: 30000
+stats: 9eafaaec-0613-4e62-96e0-dcd2e4b8ccbc
 player_limit: -1
 ip_forward: true
 groups:
@@ -40,7 +39,7 @@ groups:
 remote_ping_timeout: 5000
 connection_throttle: 4000
 log_commands: false
-stats: da5aa04a-3312-418c-be47-63bc66e04933
+prevent_proxy_connections: false
 online_mode: true
 forge_support: true
 disabled_commands:
@@ -53,8 +52,4 @@ servers:
   uhc:
     motd: '&1Just another Waterfall - Forced Host'
     address: uhc:25565
-    restricted: false
-  survival:
-    motd: '&1Just another Waterfall - Forced Host'
-    address: survival:25565
     restricted: false
